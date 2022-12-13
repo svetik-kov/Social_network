@@ -11,18 +11,19 @@
   grid-template-columns: 2fr 10fr;
 
 }
-.header{
+/*.header{
   grid-area: h;
   background-color: forestgreen;
 }
 .header img{
   width: 80px;
-}
-.nav{
-  grid-area: n;
-  background-color: darkcyan;
-}
+}*/
+/*.nav{*/
+/*  grid-area: n;*/
+/*  background-color: darkcyan;*/
+/*}*/
+/*
 .content{
   grid-area: c;
   background-color: aqua;
-}
+}*/
