@@ -2,10 +2,15 @@
 .nav{
     grid-area: n;
     background-color: darkcyan;
+    padding: 20px;
 }
-.item{
+.item a{
     color: aliceblue;
+    text-decoration: none;
 }
 .item.active{
     color: gold;
+}
+.item a.activeLink{
+    color:gold;
 }
