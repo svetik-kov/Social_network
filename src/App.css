@@ -11,17 +11,10 @@
   grid-template-columns: 2fr 10fr;
 
 }
-/*.header{
-  grid-area: h;
-  background-color: forestgreen;
+.appWrapperContent{
+  grid-area: c;
+  background-color: aqua;
 }
-.header img{
-  width: 80px;
-}*/
-/*.nav{*/
-/*  grid-area: n;*/
-/*  background-color: darkcyan;*/
-/*}*/
 /*
 .content{
   grid-area: c;
