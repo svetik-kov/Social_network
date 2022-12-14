@@ -13,16 +13,10 @@ export const MyPosts=()=>{
                 <button>Add post</button>
             </div>
             <div className={s.posts}>
-                <Post/>
-                <Post/>
-                <Post/>
-                {/*<div className={s.item}>
-                    <img src={'https://avatanplus.com/files/resources/original/58dfabe4a915a15b29b77555.png'}/>
-                    Post 1
-                </div>
-                <div className={s.item}>Post 2</div>
-                <div className={s.item}>Post 3</div>
-                <div className={s.item}>Post 4</div>*/}
+                <Post message={'Hello!!!how are you?'} likeCounter={15}/>
+                <Post message={'It is my first message.'} likeCounter={10}/>
+                <Post message={'It is nice!'}likeCounter={150}/>
+
             </div>
 
         </div>
