@@ -8,9 +8,17 @@ import {BrowserRouter, Route} from "react-router-dom";
 import {Settings} from "./components/Settinds/Settings";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
+import {DialogItemsType, MessageType, PostsType} from "./index";
 
 
-function App() {
+type AppType={
+    posts:PostsType[]
+    dialogs:DialogItemsType[]
+    messages:MessageType[]
+}
+
+function App(props:AppType) {
+
     return (
         <BrowserRouter>
             <div className="appWrapper">
@@ -23,8 +31,8 @@ function App() {
                     <Route path={'/music'} component={Music}/>
                     <Route path={'/setting'} component={Settings}/>*/}
 
-                    <Route  path={'/dialogs'} render={()=> <Dialogs/>}/>
-                    <Route path={'/profile'} render={()=><Profile/>}/>
+                    <Route  path={'/dialogs'} render={()=> <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
+                    <Route path={'/profile'} render={()=><Profile posts={props.posts}/>}/>
                     <Route path={'/news'} render={()=><News/>}/>
                     <Route path={'/music'} render={()=><Music/>}/>
                     <Route path={'/setting'} render={()=><Settings/>}/>

@@ -1,8 +1,13 @@
 import React from "react";
 import s from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
+
+import {DialogItemsType, MessageType} from "../../index";
 import {Message} from "./Message/Message";
 import {DialogItems} from "./DialogItem/DialogItem";
+
+
+
 
 // type DialogItemsType = {
 //     name: string
@@ -23,8 +28,12 @@ import {DialogItems} from "./DialogItem/DialogItem";
         <div className={s.message}>{props.message}</div>
     )
 }*/
-export const Dialogs = () => {
-    let dialogs = [
+type DialogsType={
+    dialogs:DialogItemsType[]
+    messages:MessageType[]
+}
+export const Dialogs = (props:DialogsType) => {
+  /*  let dialogs = [
         {id: 1, name: 'Svetlana'},
         {id: 2, name: 'Nina'},
         {id: 3, name: 'Dima'},
@@ -37,9 +46,9 @@ export const Dialogs = () => {
         {id: 1, message: 'Hi!!!'},
         {id: 2, message: 'How are you?'},
         {id: 3, message: 'You are welcome!!!'},
-    ]
-    let dialogsElements=dialogs.map(d=><DialogItems name={d.name} id={d.id}/>)
-   let messagesElements=messages.map(m=> <Message message={m.message}/>)
+    ]*/
+    let dialogsElements=props.dialogs.map(d=> <DialogItems name={d.name} id={d.id}/>)
+   let messagesElements=props.messages.map(m=> <Message message={m.message}/>)
 
     return (
         <div className={s.dialogs}>
