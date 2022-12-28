@@ -21,11 +21,7 @@ export const MyPosts = () => {
             </div>
             <div className={s.posts}>
                 {postsElements}
-                {/*<Post message={postData[0].message} likeCounter={postData[0].likeCounter}/>*/}
-                {/*<Post message={postData[1].message} likeCounter={postData[1].likeCounter}/>*/}
-                {/*<Post message={postData[2].message} likeCounter={postData[2].likeCounter}/>*/}
-
-            </div>
+                           </div>
         </div>
     )
 }

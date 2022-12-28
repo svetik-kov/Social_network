@@ -1,26 +1,28 @@
 import React from "react";
 import s from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
+import {Message} from "./Message/Message";
+import {DialogItems} from "./DialogItem/DialogItem";
 
-type DialogItemsType = {
-    name: string
-    id: number
-}
-type MessageType = {
+// type DialogItemsType = {
+//     name: string
+//     id: number
+// }
+/*type MessageType = {
     message: string
-}
-const DialogItems = (props: DialogItemsType) => {
+}*/
+/*const DialogItems = (props: DialogItemsType) => {
     return (
         <div className={s.dialog}>
             <NavLink to={'/dialogs/' + props.id}>{props.name}</NavLink>
         </div>
     )
-}
-const Message = (props: MessageType) => {
+}*/
+/*const Message = (props: MessageType) => {
     return (
         <div className={s.message}>{props.message}</div>
     )
-}
+}*/
 export const Dialogs = () => {
     let dialogs = [
         {id: 1, name: 'Svetlana'},
@@ -43,25 +45,10 @@ export const Dialogs = () => {
         <div className={s.dialogs}>
             <div className={s.dialogItems}>
                 {dialogsElements}
-               {/* {dialogs.map((el=>{
-                    return (
-                        <DialogItems name={el.name} id={el.id}/>
-                    )
-                }))}*/}
-
-                {/*   <DialogItems name={dialogs[0].name} id={dialogs[0].id}/>
-                <DialogItems name={dialogs[1].name} id={dialogs[1].id}/>
-                <DialogItems name={dialogs[2].name} id={dialogs[2].id}/>
-                <DialogItems name={dialogs[3].name} id={dialogs[3].id}/>
-                <DialogItems name={dialogs[4].name} id={dialogs[4].id}/>
-                <DialogItems name={dialogs[5].name} id={dialogs[5].id}/>*/}
-            </div>
+                          </div>
 
             <div className={s.messages}>
                 {messagesElements}
-               {/* <Message message={messages[0].message}/>
-                <Message message={messages[1].message}/>
-                <Message message={messages[2].message}/>*/}
             </div>
         </div>
     )
