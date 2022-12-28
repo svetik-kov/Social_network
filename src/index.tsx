@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {state} from "./redux/state";
 
-export type PostsType={
+/*export type PostsType={
     id:number
     message:string
     likeCounter:number
@@ -34,8 +35,8 @@ let messages = [
     {id: 1, message: 'Hi!!!'},
     {id: 2, message: 'How are you?'},
     {id: 3, message: 'You are welcome!!!'},
-]
+]*/
 ReactDOM.render(
-    <App posts={posts} dialogs={dialogs} messages={messages}/>,
+    <App state={state} /*posts={posts} dialogs={dialogs} messages={messages}*//>,
   document.getElementById('root')
 );

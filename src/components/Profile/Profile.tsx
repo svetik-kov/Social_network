@@ -2,11 +2,13 @@ import React from "react";
 import s from './Profile.module.css'
 import {MyPosts} from "./MyPosts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
-import {PostsType} from "../../index";
+import {PostsType, profilePageType, StateType} from "../../redux/state";
+
 
 
 type ProfileType={
-    posts:PostsType[]
+   /* posts:PostsType[]*/
+    state:profilePageType
 }
 export const Profile=(props:ProfileType)=>{
  /*   let posts=[
@@ -18,7 +20,7 @@ export const Profile=(props:ProfileType)=>{
     return (
         <div >
           <ProfileInfo/>
-            <MyPosts posts={props.posts}/>
+            <MyPosts posts={props.state.posts}/>
 
         </div>
     )
