@@ -4,13 +4,10 @@ import {Post} from "./Post/Post";
 import {PostsType} from "../../../redux/state";
 
 
-// type PostsType={
-//     id:number
-//     message:string
-//     likeCounter:number
-// }
+
 type MyPostsType = {
     posts: PostsType[]
+    addPost:(postMessage:string)=>void
 }
 export const MyPosts = (props: MyPostsType) => {
     /*  let posts=[
@@ -26,9 +23,9 @@ export const MyPosts = (props: MyPostsType) => {
         alert(text)
     }}*/
     let addPost = () => {
-        let text = newPostElement.current?.value
-        alert(text)
-    }
+        if (newPostElement.current){
+        props.addPost(newPostElement.current?.value)
+    }}
     return (
         <div className={s.postBlock}>
             <h3>My posts</h3>
