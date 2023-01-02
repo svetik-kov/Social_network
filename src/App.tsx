@@ -22,7 +22,7 @@ type AppType={
 function App(props:AppType) {
 
     return (
-        <BrowserRouter>
+     /*   <BrowserRouter>*/
             <div className="appWrapper">
                 <Header/>
                 <NavBar/>
@@ -43,7 +43,7 @@ function App(props:AppType) {
 
                 </div>
             </div>
-        </BrowserRouter>
+        // </BrowserRouter>
     );
 }
 

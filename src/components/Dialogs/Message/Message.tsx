@@ -1,4 +1,4 @@
-import React from "react";
+import React, {createRef} from "react";
 /*import s from './Dialogs.module.css'*/
 import {NavLink} from "react-router-dom";
 import s from './../Dialogs.module.css'
@@ -10,7 +10,18 @@ import {MessageType} from "../../../redux/state";
 }*/
 
 export const Message = (props: MessageType) => {
+    let newMessage=createRef<HTMLTextAreaElement>()
+    let addMessage=()=>{
+        alert(newMessage.current?.value)
+    }
+
     return (
-        <div className={s.message}>{props.message}</div>
+        <div>
+          <div>
+              <textarea ref={ newMessage}></textarea>
+              <button onClick={addMessage}>New message</button>
+          </div>
+            <div className={s.message}>{props.message}</div>
+        </div>
     )
 }

@@ -15,6 +15,7 @@ type DialogsType={
     state:messagesPageType
 }
 export const Dialogs = (props:DialogsType) => {
+
   /*  let dialogs = [
         {id: 1, name: 'Svetlana'},
         {id: 2, name: 'Nina'},
