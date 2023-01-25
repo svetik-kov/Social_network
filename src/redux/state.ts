@@ -38,10 +38,15 @@ export type AddPostActiveType={
     type:'ADD-POST'
 }
 export type UpdateNewPostTextActiveType={
-    type:'UPDATE-NEW=POST-TEXT'
+    type:'UPDATE-NEW-POST-TEXT'
     newText:string
 }
 export type ActionTypes=AddPostActiveType|UpdateNewPostTextActiveType
+
+const ADD_POST ='ADD-POST'
+const UPDATE_NEW_POST_TEXT ='UPDATE-NEW-POST-TEXT'
+
+
 export let store: StoreType = {
     _state: {
         profilePage: {
@@ -103,7 +108,7 @@ export let store: StoreType = {
             this._state.profilePage.newPostText = ''
             this._callSubscriber()
         } else{
-            if (action.type==='UPDATE-NEW=POST-TEXT'){
+            if (action.type==='UPDATE-NEW-POST-TEXT'){
                 this._state.profilePage.newPostText = action.newText
                 this._callSubscriber()
             }
@@ -111,14 +116,9 @@ export let store: StoreType = {
     }
 }
 
-export const addPostActionCreator=():AddPostActiveType=>{
-    return {
-        type:'ADD-POST'
-    }
-}
-export const UpdateNewPostTextActiveCreator=(text:string):UpdateNewPostTextActiveType=>{
-    return {type:'UPDATE-NEW=POST-TEXT', newText:text}
-}
+
+export const addPostActionCreator=():AddPostActiveType=>({type:ADD_POST})
+export const UpdateNewPostTextActiveCreator=(text:string):UpdateNewPostTextActiveType=>({type:UPDATE_NEW_POST_TEXT, newText:text})
 /*let rerenderEntireTree=()=>{
     console.log('State changed')
 }*/
