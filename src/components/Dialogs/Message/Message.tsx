@@ -17,10 +17,10 @@ export const Message = (props: MessageType) => {
 
     return (
         <div>
-          <div>
+       {/*   <div>
               <textarea ref={ newMessage}></textarea>
               <button onClick={addMessage}>New message</button>
-          </div>
+          </div>*/}
             <div className={s.message}>{props.message}</div>
         </div>
     )
