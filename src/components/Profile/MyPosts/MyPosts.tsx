@@ -1,7 +1,13 @@
 import React from "react";
 import s from './MyPosts.module.css'
 import {Post} from "./Post/Post";
-import {ActionTypes, PostsType} from "../../../redux/state";
+import {
+    ActionTypes,
+    addPostActionCreator,
+    AddPostActiveType,
+    PostsType, UpdateNewPostTextActiveCreator,
+    UpdateNewPostTextActiveType
+} from "../../../redux/state";
 
 
 type MyPostsType = {
@@ -11,6 +17,8 @@ type MyPostsType = {
    /* updateNewPostText: (newText: string) => void*/
     dispatch:(action:ActionTypes)=>void
 }
+
+
 export const MyPosts = (props: MyPostsType) => {
     /*  let posts=[
           {id:1, message:'Hello!!!how are you?',likeCounter:15},
@@ -26,7 +34,7 @@ export const MyPosts = (props: MyPostsType) => {
     }}*/
     let addPost = () => {
 
-        props.dispatch({type:'ADD-POST'})
+        props.dispatch(addPostActionCreator())
 
        /* props.updateNewPostText('')*/
 
@@ -35,7 +43,7 @@ export const MyPosts = (props: MyPostsType) => {
         if (newPostElement.current){
         let text=newPostElement.current.value
        /* props.updateNewPostText(text)*/
-            props.dispatch({type:'UPDATE-NEW=POST-TEXT', newText:text})
+            props.dispatch(UpdateNewPostTextActiveCreator(text))
     }}
     return (
         <div className={s.postBlock}>

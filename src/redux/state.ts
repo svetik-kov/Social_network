@@ -34,10 +34,10 @@ export type StoreType = {
     dispatch:(action:ActionTypes)=>void
 }
 
-type AddPostActiveType={
+export type AddPostActiveType={
     type:'ADD-POST'
 }
-type UpdateNewPostTextActiveType={
+export type UpdateNewPostTextActiveType={
     type:'UPDATE-NEW=POST-TEXT'
     newText:string
 }
@@ -109,10 +109,16 @@ export let store: StoreType = {
             }
         }
     }
-
-
 }
 
+export const addPostActionCreator=():AddPostActiveType=>{
+    return {
+        type:'ADD-POST'
+    }
+}
+export const UpdateNewPostTextActiveCreator=(text:string):UpdateNewPostTextActiveType=>{
+    return {type:'UPDATE-NEW=POST-TEXT', newText:text}
+}
 /*let rerenderEntireTree=()=>{
     console.log('State changed')
 }*/
