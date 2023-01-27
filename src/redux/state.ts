@@ -61,10 +61,7 @@ export type ActionTypes =
     | UpdateNewMessageBodyActiveType
     | UpdateSendBodyActiveType
 
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
-const SEND_MESSAGE = 'SEND-MESSAGE'
+
 
 export let store: StoreType = {
     _state: {
@@ -110,32 +107,12 @@ export let store: StoreType = {
         this._state= DialogsReducer( this._state,action)
         this._state= SidebarReducer( this._state,action)
         this._callSubscriber()
-        /*if (action.type === ADD_POST) {
-            let newPost: PostsType = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likeCounter: 0
-            }
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = ''
-            this._callSubscriber()
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText
-            this._callSubscriber()
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsPage.newMessageBody = action.body
-            this._callSubscriber()
-        } else if (action.type === SEND_MESSAGE) {
-            let body = this._state.dialogsPage.newMessageBody
-            this._state.dialogsPage.newMessageBody = ''
-            this._state.dialogsPage.messages.push({id: 4, message: body})
-        }*/
     }
 
 }
 
 
-export const addPostActionCreator = (): AddPostActiveType => ({type: ADD_POST})
+/*export const addPostActionCreator = (): AddPostActiveType => ({type: ADD_POST})
 export const UpdateNewPostTextActiveCreator = (text: string): UpdateNewPostTextActiveType => ({
     type: UPDATE_NEW_POST_TEXT,
     newText: text
@@ -143,5 +120,5 @@ export const UpdateNewPostTextActiveCreator = (text: string): UpdateNewPostTextA
 export const UpdateNewMessageBodyActiveCreator = (text: string): UpdateNewMessageBodyActiveType => ({
     type: UPDATE_NEW_MESSAGE_BODY,
     body: text
-})
+})*/
 export const sendMessageActionCreator = (): UpdateSendBodyActiveType => ({type: "SEND-MESSAGE"})

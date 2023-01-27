@@ -9,8 +9,9 @@ import {
     messagesPageType,
     MessageType, sendMessageActionCreator,
     StateType, StoreType,
-    UpdateNewMessageBodyActiveCreator, UpdateNewMessageBodyActiveType
+    UpdateNewMessageBodyActiveType
 } from "../../redux/state";
+import {UpdateNewMessageBodyActiveCreator} from "../../redux/DialogsReducer";
 
 
 type DialogsType = {
