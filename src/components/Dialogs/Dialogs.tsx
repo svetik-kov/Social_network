@@ -12,16 +12,20 @@ import {
     UpdateNewMessageBodyActiveType
 } from "../../redux/store";
 import {UpdateNewMessageBodyActiveCreator} from "../../redux/DialogsReducer";
+import {ReduxStoreType} from "../../redux/ReduxStore";
 
 
 type DialogsType = {
 
     // state:messagesPageType
     // dispatch:(action:ActionTypes)=>void
-    store: StoreType
+    store: ReduxStoreType
+    UpdateNewMessageBody:(dody:string)=>void
+    onSendMessage:()=>void
+    dialogsPage:messagesPageType
 }
 export const Dialogs = (props: DialogsType) => {
-    let state = props.store.getState().dialogsPage
+    let state = props.dialogsPage
     /*  let dialogs = [
           {id: 1, name: 'Svetlana'},
           {id: 2, name: 'Nina'},
@@ -41,11 +45,13 @@ export const Dialogs = (props: DialogsType) => {
     let newMessageBody = state.newMessageBody
 
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageActionCreator())
+        props.onSendMessage()
+       /* props.store.dispatch(sendMessageActionCreator())*/
     }
     let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.currentTarget.value
-        props.store.dispatch(UpdateNewMessageBodyActiveCreator(body))
+        props.UpdateNewMessageBody(body)
+       /* props.store.dispatch(UpdateNewMessageBodyActiveCreator(body))*/
     }
     return (
         <div className={s.dialogs}>

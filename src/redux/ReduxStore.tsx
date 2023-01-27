@@ -3,8 +3,10 @@ import ProfileReducer from "./ProfileReducer";
 import DialogsReducer from "./DialogsReducer";
 import SidebarReducer from "./SidebarReducer";
 
+export type ReducerType=ReturnType<typeof reducers>
+export type ReduxStoreType=typeof store
 
-let reducers=combineReducers({
+let reducers =combineReducers({
     profilePage: ProfileReducer,
     dialogsPage: DialogsReducer,
     sidebar: SidebarReducer

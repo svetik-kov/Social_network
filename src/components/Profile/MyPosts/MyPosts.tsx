@@ -12,10 +12,10 @@ import {addPostActionCreator, UpdateNewPostTextActiveCreator} from "../../../red
 
 type MyPostsType = {
     posts: PostsType[]
-    // addPost: () => void
+    addPost: () => void
     newPostText: string
-   /* updateNewPostText: (newText: string) => void*/
-    dispatch:(action:ActionTypes)=>void
+    updateNewPostText: (newText: string) => void
+    //dispatch: (action: ActionTypes) => void
 }
 
 
@@ -32,19 +32,20 @@ export const MyPosts = (props: MyPostsType) => {
          let text=newPostElement.current.value
         alert(text)
     }}*/
+
     let addPost = () => {
-
-        props.dispatch(addPostActionCreator())
-
-       /* props.updateNewPostText('')*/
+        props.addPost()
+        /* props.dispatch(addPostActionCreator())*/
+        /* props.updateNewPostText('')*/
 
     }
     const onPostChange = () => {
-        if (newPostElement.current){
-        let text=newPostElement.current.value
-       /* props.updateNewPostText(text)*/
-            props.dispatch(UpdateNewPostTextActiveCreator(text))
-    }}
+        if (newPostElement.current) {
+            let text = newPostElement.current.value
+            props.updateNewPostText(text)
+            /* props.dispatch(UpdateNewPostTextActiveCreator(text))*/
+        }
+    }
     return (
         <div className={s.postBlock}>
             <h3>My posts</h3>

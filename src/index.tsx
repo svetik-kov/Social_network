@@ -6,20 +6,24 @@ import './index.css';
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
 import store from "./redux/ReduxStore";
+import {StateType,} from "./redux/store";
 
 
-const rerenderEntireTree = () => {
+const rerenderEntireTree = (state:StateType) => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={store.getState()}
-                 dispatch={store.dispatch.bind(store)}
+            <App
+               // state={state}
+                // dispatch={store.dispatch.bind(store)}
                  store={store}
             />
         </BrowserRouter>,
         document.getElementById('root')
     );
 }
-rerenderEntireTree()
+rerenderEntireTree(store.getState())
+
 store.subscribe(() => {
-    rerenderEntireTree()
+    let state=store.getState()
+    rerenderEntireTree(state)
 })
