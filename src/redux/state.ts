@@ -1,3 +1,7 @@
+import profileReducer from "./ProfileReducer";
+import DialogsReducer from "./DialogsReducer";
+import SidebarReducer from "./SidebarReducer";
+
 export type PostsType = {
     id: number
     message: string
@@ -24,6 +28,7 @@ export type messagesPageType = {
 export type StateType = {
     profilePage: profilePageType
     dialogsPage: messagesPageType
+    sidebar:{}
 }
 export type StoreType = {
     _state: StateType
@@ -60,6 +65,7 @@ const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
 const SEND_MESSAGE = 'SEND-MESSAGE'
+
 export let store: StoreType = {
     _state: {
         profilePage: {
@@ -86,7 +92,8 @@ export let store: StoreType = {
                 {id: 3, message: 'You are welcome!!!'},
             ],
             newMessageBody: ''
-        }
+        },
+        sidebar:{}
     },
     _callSubscriber() {
         console.log('State changed')
@@ -98,7 +105,12 @@ export let store: StoreType = {
         this._callSubscriber = observer
     },
     dispatch(action) {
-        if (action.type === ADD_POST) {
+
+        this._state= profileReducer( this._state,action)
+        this._state= DialogsReducer( this._state,action)
+        this._state= SidebarReducer( this._state,action)
+        this._callSubscriber()
+        /*if (action.type === ADD_POST) {
             let newPost: PostsType = {
                 id: 5,
                 message: this._state.profilePage.newPostText,
@@ -117,7 +129,7 @@ export let store: StoreType = {
             let body = this._state.dialogsPage.newMessageBody
             this._state.dialogsPage.newMessageBody = ''
             this._state.dialogsPage.messages.push({id: 4, message: body})
-        }
+        }*/
     }
 
 }
