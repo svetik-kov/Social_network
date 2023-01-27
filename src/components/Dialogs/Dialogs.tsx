@@ -10,7 +10,7 @@ import {
     MessageType, sendMessageActionCreator,
     StateType, StoreType,
     UpdateNewMessageBodyActiveType
-} from "../../redux/state";
+} from "../../redux/store";
 import {UpdateNewMessageBodyActiveCreator} from "../../redux/DialogsReducer";
 
 

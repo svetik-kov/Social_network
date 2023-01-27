@@ -1,7 +1,10 @@
 import React from 'react';
-import {PostsType, StateType} from "./state";
+import {PostsType, StateType} from "./store";
 
- const SidebarReducer = (state:StateType, action:{}) => {
+
+type initialStateType={}
+let initialState:initialStateType={}
+ const SidebarReducer = (state=initialState, action:{}) => {
    /* if (action.type === ADD_POST) {
         let newPost: PostsType = {
             id: 5,

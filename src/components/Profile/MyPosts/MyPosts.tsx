@@ -6,7 +6,7 @@ import {
     AddPostActiveType,
     PostsType,
     UpdateNewPostTextActiveType
-} from "../../../redux/state";
+} from "../../../redux/store";
 import {addPostActionCreator, UpdateNewPostTextActiveCreator} from "../../../redux/ProfileReducer";
 
 

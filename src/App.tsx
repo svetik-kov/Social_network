@@ -8,13 +8,13 @@ import {BrowserRouter, Route} from "react-router-dom";
 import {Settings} from "./components/Settinds/Settings";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
-import {ActionTypes, StateType, StoreType} from "./redux/state";
+import {ActionTypes, StateType, StoreType} from "./redux/store";
 
 
 type AppType = {
     state: StateType
     dispatch:(action:ActionTypes)=>void
-    store:StoreType
+    store:any
     // addPost: () => void
     // updateNewPostText:(newText:string)=>void
 }

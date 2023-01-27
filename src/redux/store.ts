@@ -103,9 +103,9 @@ export let store: StoreType = {
     },
     dispatch(action) {
 
-        this._state= profileReducer( this._state,action)
-        this._state= DialogsReducer( this._state,action)
-        this._state= SidebarReducer( this._state,action)
+        this._state.profilePage= profileReducer( this._state.profilePage,action)
+        this._state.dialogsPage= DialogsReducer( this._state.dialogsPage,action)
+        this._state.sidebar= SidebarReducer( this._state.sidebar,action)
         this._callSubscriber()
     }
 
