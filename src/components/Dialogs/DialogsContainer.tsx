@@ -16,14 +16,7 @@ type DialogsContainerType = {
 
 }
 export const DialogsContainer = (props: DialogsContainerType) => {
-    /*let state = props.store.getState().dialogsPage
 
-    let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageActionCreator())
-    }
-    let onNewMessageChange = (body:string) => {
-      props.store.dispatch(UpdateNewMessageBodyActiveCreator(body))
-     }*/
      return (
          <StoreContext.Consumer>
              { store=>{
@@ -43,9 +36,7 @@ export const DialogsContainer = (props: DialogsContainerType) => {
                          dialogsPage={state}/>
                  )
              }
-
-
-         }
+             }
 
          </StoreContext.Consumer>
 

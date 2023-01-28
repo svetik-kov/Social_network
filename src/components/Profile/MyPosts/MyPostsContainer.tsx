@@ -16,18 +16,7 @@ type MyPostsContainerType = {
 }
 
 export const MyPostsContainer = (props: MyPostsContainerType) => {
-//let state=props.store.getState()
 
-  /*  let addPost = () => {
-        //props.addPost()
-        props.store.dispatch(addPostActionCreator())
-        /!* props.updateNewPostText('')*!/
-    }
-    const onPostChange = (text: string) => {
-
-        let action = UpdateNewPostTextActiveCreator(text)
-        props.store.dispatch(action)
-    }*/
     return (
         <StoreContext.Consumer>
             {
