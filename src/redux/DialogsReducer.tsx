@@ -1,11 +1,27 @@
 import React from 'react';
-import {ActionTypes, messagesPageType, UpdateNewMessageBodyActiveType} from "./store";
+import {ActionTypes,  UpdateNewMessageBodyActiveType} from "./store";
 
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
 const SEND_MESSAGE = 'SEND-MESSAGE'
 
-type initialStateType=messagesPageType
-let initialState:initialStateType={
+
+export type DialogItemsType = {
+    name: string
+    id: number
+}
+export type MessageType = {
+    id?: number
+    message: string
+}
+ export type MessagesPageType = {
+    dialogs: DialogItemsType[]
+    messages: MessageType[]
+    newMessageBody: string
+}
+//export type InitialStateType=MessagesPageType
+
+
+let initialState={
     dialogs: [
         {id: 1, name: 'Svetlana'},
         {id: 2, name: 'Nina'},
@@ -13,15 +29,17 @@ let initialState:initialStateType={
         {id: 4, name: 'Nadya'},
         {id: 5, name: 'Olia'},
         {id: 6, name: 'Marina'},
-    ],
+    ] as Array<DialogItemsType>,
     messages: [
         {id: 1, message: 'Hi!!!'},
         {id: 2, message: 'How are you?'},
         {id: 3, message: 'You are welcome!!!'},
-    ],
+    ] as Array<MessageType>,
     newMessageBody: ''
 }
- const DialogsReducer = (state=initialState,action:ActionTypes) => {
+export type InitialStateType=typeof initialState
+
+ const DialogsReducer = (state:InitialStateType=initialState,action:ActionTypes):InitialStateType => {
      switch (action.type){
          case UPDATE_NEW_MESSAGE_BODY:
              state.newMessageBody = action.body
@@ -35,6 +53,7 @@ let initialState:initialStateType={
              return state
      }
 };
+
 export const UpdateNewMessageBodyActiveCreator = (text: string): UpdateNewMessageBodyActiveType => ({
     type: UPDATE_NEW_MESSAGE_BODY,
     body: text

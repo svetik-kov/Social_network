@@ -1,25 +1,20 @@
 import React from "react";
 import s from './MyPosts.module.css'
 import {Post} from "./Post/Post";
-import {
-    ActionTypes,
-    AddPostActiveType,
-    PostsType,
-    UpdateNewPostTextActiveType
-} from "../../../redux/store";
-import {addPostActionCreator, UpdateNewPostTextActiveCreator} from "../../../redux/ProfileReducer";
+import {addPostActionCreator, PostsType, UpdateNewPostTextActiveCreator} from "../../../redux/ProfileReducer";
+import {MyPostType} from "./MyPostsContainer";
 
 
-type MyPostsType = {
+/*type MyPostsType = {
     posts: PostsType[]
     addPost: () => void
     newPostText: string
     updateNewPostText: (newText: string) => void
     //dispatch: (action: ActionTypes) => void
-}
+}*/
 
 
-export const MyPosts = (props: MyPostsType) => {
+export const MyPosts = (props: MyPostType) => {
     /*  let posts=[
           {id:1, message:'Hello!!!how are you?',likeCounter:15},
           {id:2, message:'It is my first message.', likeCounter:10},

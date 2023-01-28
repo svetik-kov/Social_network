@@ -2,33 +2,32 @@ import profileReducer from "./ProfileReducer";
 import DialogsReducer from "./DialogsReducer";
 import SidebarReducer from "./SidebarReducer";
 
-export type PostsType = {
+ type PostsType = {
     id: number
     message: string
     likeCounter: number
 }
-export type MessageType = {
+ type MessageType = {
     id?: number
     message: string
 }
-export type DialogItemsType = {
+ type DialogItemsType = {
     name: string
     id: number
 }
-export type profilePageType = {
+ type ProfilePageType = {
     posts: PostsType[]
     newPostText: string
-
 }
-export type messagesPageType = {
+ type MessagesPageType = {
     dialogs: DialogItemsType[]
     messages: MessageType[]
     newMessageBody: string
 }
 export type StateType = {
-    profilePage: profilePageType
-    dialogsPage: messagesPageType
-    sidebar:{}
+    profilePage: ProfilePageType
+    dialogsPage: MessagesPageType
+    sidebar: {}
 }
 export type StoreType = {
     _state: StateType
@@ -62,7 +61,6 @@ export type ActionTypes =
     | UpdateSendBodyActiveType
 
 
-
 export let store: StoreType = {
     _state: {
         profilePage: {
@@ -90,7 +88,7 @@ export let store: StoreType = {
             ],
             newMessageBody: ''
         },
-        sidebar:{}
+        sidebar: {}
     },
     _callSubscriber() {
         console.log('State changed')
@@ -103,9 +101,9 @@ export let store: StoreType = {
     },
     dispatch(action) {
 
-        this._state.profilePage= profileReducer( this._state.profilePage,action)
-        this._state.dialogsPage= DialogsReducer( this._state.dialogsPage,action)
-        this._state.sidebar= SidebarReducer( this._state.sidebar,action)
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = DialogsReducer(this._state.dialogsPage, action)
+        this._state.sidebar = SidebarReducer(this._state.sidebar, action)
         this._callSubscriber()
     }
 

@@ -1,56 +1,31 @@
 import React, {ChangeEvent} from "react";
 import s from './Dialogs.module.css'
-import {NavLink} from "react-router-dom";
 import {Message} from "./Message/Message";
 import {DialogItems} from "./DialogItem/DialogItem";
-import {
-    ActionTypes,
-    DialogItemsType,
-    messagesPageType,
-    MessageType, sendMessageActionCreator,
-    StateType, StoreType,
-    UpdateNewMessageBodyActiveType
-} from "../../redux/store";
-import {UpdateNewMessageBodyActiveCreator} from "../../redux/DialogsReducer";
-import {ReduxStoreType} from "../../redux/ReduxStore";
+
+import {MessagesPageType} from "../../redux/DialogsReducer";
+
+
 
 
 type DialogsType = {
-
-    // state:messagesPageType
-    // dispatch:(action:ActionTypes)=>void
-    store: ReduxStoreType
-    UpdateNewMessageBody:(dody:string)=>void
-    onSendMessage:()=>void
-    dialogsPage:messagesPageType
+    updateNewMessageBody:(dody:string)=>void
+    sendMessage:()=>void
+    dialogsPage:MessagesPageType
 }
 export const Dialogs = (props: DialogsType) => {
     let state = props.dialogsPage
-    /*  let dialogs = [
-          {id: 1, name: 'Svetlana'},
-          {id: 2, name: 'Nina'},
-          {id: 3, name: 'Dima'},
-          {id: 4, name: 'Nadya'},
-          {id: 5, name: 'Olia'},
-          {id: 6, name: 'Marina'},
-      ]
-
-      let messages = [
-          {id: 1, message: 'Hi!!!'},
-          {id: 2, message: 'How are you?'},
-          {id: 3, message: 'You are welcome!!!'},
-      ]*/
     let dialogsElements = state.dialogs.map(d => <DialogItems name={d.name} id={d.id}/>)
     let messagesElements = state.messages.map(m => <Message message={m.message}/>)
     let newMessageBody = state.newMessageBody
 
     let onSendMessageClick = () => {
-        props.onSendMessage()
+        props.sendMessage()
        /* props.store.dispatch(sendMessageActionCreator())*/
     }
     let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.currentTarget.value
-        props.UpdateNewMessageBody(body)
+        props.updateNewMessageBody(body)
        /* props.store.dispatch(UpdateNewMessageBodyActiveCreator(body))*/
     }
     return (

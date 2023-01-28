@@ -1,5 +1,5 @@
 import React from 'react';
-import {PostsType, StateType} from "./store";
+import { StateType} from "./store";
 
 
 type initialStateType={}
