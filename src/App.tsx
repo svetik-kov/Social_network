@@ -16,7 +16,7 @@ import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
 type AppType = {
    // state: StateType
     //dispatch:(action:ActionTypes)=>void
-    store:ReduxStoreType
+    //store:ReduxStoreType
     // addPost: () => void
     // updateNewPostText: (newText: string) => void
 }
@@ -32,11 +32,13 @@ debugger
             <div className="appWrapperContent">
 
                 <Route path={'/dialogs'} render={() => <DialogsContainer
-                    store={props.store}
+                    //store={props.store}
+
                     /* dispatch={props.dispatch} state={props.state.dialogsPage}*//>}/>
                 <Route path={'/profile'}
                        render={() => <Profile
-                           store={props.store}
+                           //store={props.store}
+
                            // profilePage={props.state.profilePage}
                            // addPost={props.addPost}
                            // updateNewPostText={props.updateNewPostText}

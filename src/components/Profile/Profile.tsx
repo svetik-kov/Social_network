@@ -8,7 +8,7 @@ import {ReduxStoreType} from "../../redux/ReduxStore";
 
 
 type ProfileType = {
-    store: ReduxStoreType
+   // store: ReduxStoreType
     // profilePage: profilePageType
     // addPost: () => void
     // updateNewPostText: (newText: string) => void
@@ -20,7 +20,7 @@ debugger
         <div>
             <ProfileInfo/>
             <MyPostsContainer
-                store={props.store}
+               // store={props.store}
                 // posts={props.profilePage.posts}
                 // newPostText={props.profilePage.newPostText}
                 // //dispatch={props.dispatch}
