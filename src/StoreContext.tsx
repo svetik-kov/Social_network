@@ -10,8 +10,8 @@ export const StoreContext=React.createContext({}as typeof store)
 
 
 
-/*type ProviderType={
-    store:StoreType
+type ProviderType={
+    store:typeof store
     children:React.ReactNode
 }
 export const Provider=(props:ProviderType)=>{
@@ -21,4 +21,4 @@ export const Provider=(props:ProviderType)=>{
 </StoreContext.Provider>
 
     )
-}*/
+}
