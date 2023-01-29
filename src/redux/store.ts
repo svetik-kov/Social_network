@@ -39,7 +39,7 @@ export type StoreType = {
     dispatch: (action: ActionTypes) => void
 }
 
-export type AddPostActiveType = {
+ type AddPostActiveType = {
     type: 'ADD-POST'
 }
 export type UpdateNewPostTextActiveType = {

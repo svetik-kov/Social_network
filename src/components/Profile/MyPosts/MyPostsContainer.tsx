@@ -11,41 +11,6 @@ import {RootReduceType} from "../../../redux/ReduxStore";
 import {Dispatch} from "redux";
 
 
-/*type MyPostsContainerType = {
- /!*  addPost: () => void
-   updateNewPostText: (newText: string) => void
-    posts: PostsType[]
-    newPostText: string*!/
-    //store:ReduxStoreType
-  // dispatch: (action: ActionTypes) => void
-}*/
-
-/*export const MyPostsContainer = (props: MyPostsContainerType) => {
-
-    return (
-        <StoreContext.Consumer>
-            {
-            (store)=>{
-                let state=store.getState()
-
-                let addPost = () => {
-                    store.dispatch(addPostActionCreator())
-                }
-                const onPostChange = (text: string) => {
-
-                    let action = UpdateNewPostTextActiveCreator(text)
-                    store.dispatch(action)
-                }
-                return (
-                    <MyPosts
-                        posts={state.profilePage.posts}
-                        addPost={addPost}
-                        newPostText={state.profilePage.newPostText}
-                        updateNewPostText={onPostChange} />
-                )}}
-        </StoreContext.Consumer>
-    )}*/
-
 type MapStatePropsType={
     posts:Array<PostsType>
     newPostText:string

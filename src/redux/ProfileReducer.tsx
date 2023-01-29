@@ -1,8 +1,6 @@
 import React from 'react';
 import {
     ActionTypes,
-    AddPostActiveType,
-
     UpdateNewPostTextActiveType
 } from "./store";
 
@@ -17,6 +15,9 @@ export type PostsType = {
 export type ProfilePageType = {
     posts: PostsType[]
     newPostText: string
+}
+export type AddPostActiveType = {
+    type: 'ADD-POST'
 }
 
 //export type InitialStateType=ProfilePageType
@@ -44,10 +45,7 @@ export type InitialStateType=typeof initialState
                  posts:[...state.posts,newPost] ,
                  newPostText: ''
              }
-             //stateCopy.posts=[...state.posts]
-            // stateCopy.posts.push(newPost)
-             //stateCopy.newPostText=''
-             //return stateCopy
+
 
          }
 
@@ -56,8 +54,6 @@ export type InitialStateType=typeof initialState
                  ...state,
                  newPostText:action.newText
              }
-            // stateCopy.newPostText=action.newText
-            // return stateCopy
 
          }
          default: return state

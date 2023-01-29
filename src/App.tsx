@@ -3,37 +3,31 @@ import './App.css';
 import {Header} from "./components/Header/Header";
 import {NavBar} from "./components/NavBar/NavBar";
 import {Profile} from "./components/Profile/Profile";
-import { Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import {Settings} from "./components/Settinds/Settings";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
+import {Users} from "./components/Users/Users";
+import UsersContainer from "./components/Users/UsersContainer";
 
-
-/*type AppType = {
-   // state: StateType
-    //dispatch:(action:ActionTypes)=>void
-    //store:ReduxStoreType
-    // addPost: () => void
-    // updateNewPostText: (newText: string) => void
-}*/
 
 function App() {
-debugger
+    debugger
     return (
 
         /*   <BrowserRouter>*/
         <div className="appWrapper">
             <Header/>
             <NavBar/>
-            <div className="appWrapperContent">
 
+            <div className="appWrapperContent">
                 <Route path={'/dialogs'} render={() => <DialogsContainer/>}/>
-                <Route path={'/profile'}
-                       render={() => <Profile/>}/>
-                <Route path={'/news'} render={() => <News/>}/>
+                <Route path={'/profile'} render={() => <Profile/>}/>
+                <Route path={'/users'} render={()=><UsersContainer/>}/>
+               {/*<Route path={'/news'} render={() => <News/>}/>
                 <Route path={'/music'} render={() => <Music/>}/>
-                <Route path={'/setting'} render={() => <Settings/>}/>
+                <Route path={'/setting'} render={() => <Settings/>}/>*/}
 
             </div>
         </div>
