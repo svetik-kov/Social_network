@@ -1,50 +1,30 @@
 import React from "react";
 import s from './MyPosts.module.css'
 import {Post} from "./Post/Post";
-import {addPostActionCreator, PostsType, UpdateNewPostTextActiveCreator} from "../../../redux/ProfileReducer";
 import {MyPostType} from "./MyPostsContainer";
 
 
-/*type MyPostsType = {
-    posts: PostsType[]
-    addPost: () => void
-    newPostText: string
-    updateNewPostText: (newText: string) => void
-    //dispatch: (action: ActionTypes) => void
-}*/
 
 
 export const MyPosts = (props: MyPostType) => {
-    /*  let posts=[
-          {id:1, message:'Hello!!!how are you?',likeCounter:15},
-          {id:2, message:'It is my first message.', likeCounter:10},
-          {id:3, message:'It is nice!', likeCounter:150},
-      ]*/
+
     let newPostElement = React.createRef<HTMLTextAreaElement>()
-    let postsElements = props.posts.map(p => <Post message={p.message} likeCounter={p.likeCounter}/>)
-    /*let addPost=()=>{
-         if (newPostElement.current){
-         let text=newPostElement.current.value
-        alert(text)
-    }}*/
+    let postsElements = props.posts.map(p => <Post key={p.id} message={p.message} likeCounter={p.likeCounter}/>)
+
 
     let addPost = () => {
         props.addPost()
-        /* props.dispatch(addPostActionCreator())*/
-        /* props.updateNewPostText('')*/
 
     }
     const onPostChange = () => {
         if (newPostElement.current) {
             let text = newPostElement.current.value
             props.updateNewPostText(text)
-            /* props.dispatch(UpdateNewPostTextActiveCreator(text))*/
         }
     }
     return (
         <div className={s.postBlock}>
             <h3>My posts</h3>
-            {/* <div>New post</div>*/}
             <div>
                 <div>
                     <textarea value={props.newPostText} onChange={onPostChange} ref={newPostElement}/>

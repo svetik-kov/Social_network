@@ -39,22 +39,26 @@ export type InitialStateType=typeof initialState
                  message: state.newPostText,
                  likeCounter: 0
              }
-             let stateCopy={...state}
-             stateCopy.posts=[...state.posts]
-             stateCopy.posts.push(newPost)
-             stateCopy.newPostText=''
-             return stateCopy
-             // state.posts.push(newPost)
-             //state.newPostText = ''
-             //return state
+            return  {
+                 ...state,
+                 posts:[...state.posts,newPost] ,
+                 newPostText: ''
+             }
+             //stateCopy.posts=[...state.posts]
+            // stateCopy.posts.push(newPost)
+             //stateCopy.newPostText=''
+             //return stateCopy
+
          }
 
          case UPDATE_NEW_POST_TEXT:{
-             let stateCopy={...state}
-             stateCopy.newPostText=action.newText
-             return stateCopy
-             //state.newPostText = action.newText
-             //return state
+             return {
+                 ...state,
+                 newPostText:action.newText
+             }
+            // stateCopy.newPostText=action.newText
+            // return stateCopy
+
          }
          default: return state
      }
