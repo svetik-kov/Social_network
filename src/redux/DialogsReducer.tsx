@@ -41,14 +41,26 @@ export type InitialStateType=typeof initialState
 
  const DialogsReducer = (state:InitialStateType=initialState,action:ActionTypes):InitialStateType => {
      switch (action.type){
-         case UPDATE_NEW_MESSAGE_BODY:
-             state.newMessageBody = action.body
-             return state
-         case SEND_MESSAGE:
-             let body = state.newMessageBody
-             state.newMessageBody = ''
-             state.messages.push({id: 4, message: body})
-             return state
+         case UPDATE_NEW_MESSAGE_BODY:{
+             let stateCopy={...state}
+             stateCopy.newMessageBody=action.body
+             return stateCopy
+             //state.newMessageBody = action.body
+            // return state
+         }
+         case SEND_MESSAGE:{
+             let stateCopy={...state}
+             let body=stateCopy.newMessageBody
+             stateCopy.messages=[...state.messages]
+             stateCopy.newMessageBody=''
+             stateCopy.messages.push({id: 4, message: body})
+             return stateCopy
+            // let body = state.newMessageBody
+             //state.newMessageBody = ''
+             //state.messages.push({id: 4, message: body})
+             //return state
+         }
+
          default:
              return state
      }
