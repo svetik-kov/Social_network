@@ -13,7 +13,7 @@ import UsersContainer from "./components/Users/UsersContainer";
 
 
 function App() {
-    debugger
+
     return (
 
         /*   <BrowserRouter>*/
