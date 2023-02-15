@@ -4,11 +4,7 @@ import {Header} from "./components/Header/Header";
 import {NavBar} from "./components/NavBar/NavBar";
 import {Profile} from "./components/Profile/Profile";
 import {Route} from "react-router-dom";
-import {Settings} from "./components/Settinds/Settings";
-import {News} from "./components/News/News";
-import {Music} from "./components/Music/Music";
 import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
-import {Users} from "./components/Users/Users";
 import UsersContainer from "./components/Users/UsersContainer";
 
 

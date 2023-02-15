@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {Users} from "./Users";
 import {followAC, setUsersAC, unFollowAC, UserType} from "../../redux/UsersReducer";
 import {RootReduceType} from "../../redux/ReduxStore";
 import {Dispatch} from "redux";
+import Users from "./UsersC";
 
-type MapStatePropsType={
+
+export type MapStatePropsType={
     users:Array<UserType>
 }
 type MapDispatchPropsType={

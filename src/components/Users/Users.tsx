@@ -3,7 +3,7 @@ import styles from './users.module.css'
 import axios from "axios";
 import userPhoto from '../../asseds/images/user1.png'
 
-export const Users = (props: UsersType) => {
+ /*const Users = (props: UsersType) => {
     let getUsers = () => {
         if (props.users.length === 0) {
             axios.get('https://social-network.samuraijs.com/api/1.0/users')
@@ -11,7 +11,7 @@ export const Users = (props: UsersType) => {
 
                     props.setUsers(response.data.items)
                 })
-            /*props.setUsers(
+            /!*props.setUsers(
                 [
                     {
                         id: 1,
@@ -38,7 +38,7 @@ export const Users = (props: UsersType) => {
                         location: {city: 'Gomel', country: 'Belarus'}
                     },
                 ]
-            )*/
+            )*!/
         }
     }
 
@@ -78,4 +78,4 @@ export const Users = (props: UsersType) => {
         </div>
 
     )
-}
+}*/
