@@ -15,24 +15,24 @@ export type UsersCType={
 class Users extends React.Component<UsersType,MapStatePropsType>{
     constructor(props:UsersType) {
         super(props);
-
-            axios.get('https://social-network.samuraijs.com/api/1.0/users')
-                .then(response => {
-
-                    this.props.setUsers(response.data.items)
-                })
         }
+componentDidMount() {
+    axios.get('https://social-network.samuraijs.com/api/1.0/users')
+        .then(response => {
 
+            this.props.setUsers(response.data.items)
+        })
+}
 
-   /* getUsers = () => {
-        if (this.props.users.length === 0) {
-            axios.get('https://social-network.samuraijs.com/api/1.0/users')
-                .then(response => {
+    /* getUsers = () => {
+         if (this.props.users.length === 0) {
+             axios.get('https://social-network.samuraijs.com/api/1.0/users')
+                 .then(response => {
 
-                    this.props.setUsers(response.data.items)
-                })
-        }
-    }*/
+                     this.props.setUsers(response.data.items)
+                 })
+         }
+     }*/
     render() {
         return (
             <div>
