@@ -1,7 +1,6 @@
 import styles from "./users.module.css";
 import userPhoto from "../../asseds/images/user.png";
 import React from "react";
-import {UsersType} from "./UsersContainer";
 import {UserType} from "../../redux/UsersReducer";
 
 
@@ -34,7 +33,7 @@ export const Users = (props:UsersAPIType) => {
 
             </div>
             {props.users.map(u => {
-                debugger
+
                 return (
                     <div key={u.id}>
                         <span>
